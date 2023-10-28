@@ -8,6 +8,9 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="note_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
             <column name="type" type="enum('checkbox', 'text')">
                 <constraints nullable="false"/>
             </column>
@@ -30,6 +33,6 @@
                                  constraintName="fk_note_items"
                                  referencedTableName="note"
                                  referencedColumnNames="id"
-                                 onDelete="SET NULL" />
+                                 onDelete="CASCADE" />
     </changeSet>
 </databaseChangeLog>

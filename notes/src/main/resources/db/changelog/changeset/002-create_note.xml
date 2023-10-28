@@ -11,6 +11,9 @@
             <column name="title" type="text">
                 <constraints nullable="true"/>
             </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
             <column name="created_at" type="timestamp">
                 <constraints nullable="false"/>
             </column>
@@ -23,10 +26,10 @@
         </createTable>
 
         <addForeignKeyConstraint baseTableName="note"
-                                 baseColumnNames="client_id"
-                                 constraintName="fk_client_notes"
-                                 referencedTableName="client"
+                                 baseColumnNames="user_id"
+                                 constraintName="fk_user_notes"
+                                 referencedTableName="user"
                                  referencedColumnNames="id"
-                                 onDelete="SET NULL" />
+                                 onDelete="CASCADE" />
     </changeSet>
 </databaseChangeLog>

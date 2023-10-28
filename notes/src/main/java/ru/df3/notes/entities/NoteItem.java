@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.df3.notes.entities.enums.Types;
 
 import java.time.LocalDateTime;
 
@@ -25,8 +26,7 @@ public class NoteItem {
     private Note note;
 
     @Column(name = "type", nullable = false)
-    private  Type type;
-    private enum Type { CHECKBOX, TEXT}
+    private Types type;
 
     @Column(name = "is_done")
     private boolean isDone;
